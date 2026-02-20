@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
-import { Mail, Linkedin, Phone, ExternalLink, ArrowRight, User, BookOpen, GraduationCap } from 'lucide-react';
+import { Mail, Linkedin, Phone, ExternalLink, ArrowRight, User, BookOpen, GraduationCap, Award } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -12,60 +12,100 @@ export default function Home() {
         {/* --- Improvised Hero Section --- */}
         <section id="about" className="relative overflow-hidden pt-24 pb-20 md:pt-32 md:pb-32 px-6 sm:px-12 lg:px-24">
           {/* Subtle Background Elements */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 
           <div className="max-w-6xl mx-auto relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div className="space-y-10 order-2 lg:order-1 text-center lg:text-left">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-center lg:justify-start gap-3">
-                    <span className="w-8 h-px bg-primary/30"></span>
-                    <span className="text-primary text-xs font-bold uppercase tracking-[0.3em]">
-                      Clinical Psychologist
+                <div className="space-y-6">
+                  <div className="flex items-center justify-center lg:justify-start gap-4">
+                    <span className="px-3 py-1 bg-primary/5 text-primary text-[10px] font-bold uppercase tracking-[0.3em] rounded-full border border-primary/10">
+                      Licensed Practitioner
                     </span>
+                    <span className="w-12 h-px bg-primary/20 hidden sm:block"></span>
                   </div>
+
                   <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-gray-900 font-bold">
                     Holding space for <span className="italic text-primary relative inline-block">
                       healing
-                      <svg className="absolute -bottom-2 left-0 w-full h-2 text-accent/30" viewBox="0 0 100 10" preserveAspectRatio="none">
-                        <path d="M0 5 Q 25 0, 50 5 T 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
+                      <svg className="absolute -bottom-1 left-0 w-full h-3 text-primary/10 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0 5 Q 25 2, 50 5 T 100 5 L 100 10 L 0 10 Z" fill="currentColor" />
                       </svg>
                     </span>, growth, and meaning.
                   </h1>
                 </div>
 
-                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  Dedicated Associate Psychologist, Lecturer, and Research Associate integrating evidence-based therapies, psychological assessment, and academic writing to support mental health across the lifespan.
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
+                  Dedicated Associate Psychologist, Lecturer, and Research Associate integrating evidence-based therapies and academic rigor to support mental well-being.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start pt-4">
-                  <Link href="#contact" className="px-10 py-4 bg-primary text-white font-medium rounded-full hover:bg-secondary transition-all shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0">
-                    Get in Touch
+                <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start pt-6">
+                  <Link href="#contact" className="group px-10 py-4 bg-primary text-white font-semibold rounded-full hover:bg-secondary transition-all shadow-xl shadow-primary/20 hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 relative overflow-hidden">
+                    <span className="relative z-10 flex items-center gap-2">
+                      Get in Touch <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                    <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                   </Link>
-                  <Link href="#research" className="px-10 py-4 border border-gray-200 text-gray-700 font-medium rounded-full hover:border-primary hover:text-primary transition-all group">
-                    View Publications <ArrowRight className="inline-block ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Link href="#research" className="px-10 py-4 border border-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-50 hover:border-gray-200 transition-all">
+                    View Publications
                   </Link>
+                </div>
+
+                {/* Micro-stats */}
+                <div className="flex items-center justify-center lg:justify-start gap-12 pt-8 border-t border-gray-100 mt-12 w-fit mx-auto lg:mx-0">
+                  <div>
+                    <p className="text-2xl font-serif font-bold text-gray-900">1.2k+</p>
+                    <p className="text-xs uppercase tracking-widest text-gray-400 font-bold">Inquiries</p>
+                  </div>
+                  <div className="w-px h-8 bg-gray-100"></div>
+                  <div>
+                    <p className="text-2xl font-serif font-bold text-gray-900">5+</p>
+                    <p className="text-xs uppercase tracking-widest text-gray-400 font-bold">Clinics</p>
+                  </div>
+                  <div className="w-px h-8 bg-gray-100"></div>
+                  <div>
+                    <p className="text-2xl font-serif font-bold text-gray-900">10+</p>
+                    <p className="text-xs uppercase tracking-widest text-gray-400 font-bold">Research Papers</p>
+                  </div>
                 </div>
               </div>
 
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
-                {/* Improvised Blob with Glow */}
-                <div className="relative w-full max-w-[480px] aspect-square">
-                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-[80px] animate-pulse"></div>
-                  <div className="w-full h-full blob-shape overflow-hidden shadow-2xl relative z-10 border-4 border-white">
+                {/* Improvised Blob with Floating Elements */}
+                <div className="relative w-full max-w-[520px] aspect-square animate-float">
+                  <div className="absolute inset-[-10%] bg-primary/20 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
+                  <div className="w-full h-full blob-shape overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.15)] relative z-10 border-[12px] border-white/80 backdrop-blur-sm">
                     <Image
                       src="/hina-portrait.jpg"
                       alt="Hina Usman"
                       fill
-                      className="object-cover scale-105"
+                      className="object-cover scale-110"
                       priority
                     />
                   </div>
-                  {/* Floating decorative element */}
-                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white rounded-2xl shadow-xl flex items-center justify-center z-20 animate-bounce transition-all duration-1000">
-                    <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
-                      <User className="w-6 h-6" />
+
+                  {/* Floating badges */}
+                  <div className="absolute -top-6 -left-6 bg-white p-5 rounded-2xl shadow-xl z-20 border border-gray-50 flex items-center gap-4 animate-bounce hover:scale-105 transition-transform cursor-pointer" style={{ animationDuration: '4s' }}>
+                    <div className="w-10 h-10 bg-primary text-white rounded-xl flex items-center justify-center">
+                      <GraduationCap className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-widest leading-none mb-1">Expertise</p>
+                      <p className="text-sm font-bold text-gray-900 leading-none">CBT & DBT</p>
+                    </div>
+                  </div>
+
+                  <div className="absolute -bottom-8 -right-8 bg-white p-5 rounded-2xl shadow-xl z-20 border border-gray-50 flex items-center gap-4 animate-bounce hover:scale-105 transition-transform cursor-pointer" style={{ animationDuration: '5s' }}>
+                    <div className="w-10 h-10 bg-accent text-white rounded-xl flex items-center justify-center shadow-lg shadow-accent/20">
+                      <Award className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-widest leading-none mb-1">Recognition</p>
+                      <p className="text-sm font-bold text-gray-900 leading-none">Research Lead</p>
                     </div>
                   </div>
                 </div>
@@ -75,10 +115,11 @@ export default function Home() {
         </section>
 
         {/* --- Philosophy --- */}
-        <section className="py-24 bg-gray-50 border-y border-gray-100 relative overflow-hidden">
-          <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <section className="py-24 bg-gray-50 border-y border-gray-100 relative overflow-hidden text-center">
+          <div className="absolute inset-0 opacity-[0.02] mix-blend-multiply pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/cubes.png")' }}></div>
+          <div className="max-w-4xl mx-auto px-6 relative z-10">
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-gray-800 italic">
-              "I work at the intersection of clinical practice, education, and research to foster holistic well-being and educational excellence."
+              &quot;I work at the intersection of clinical practice, education, and research to foster holistic well-being and educational excellence.&quot;
             </h2>
           </div>
         </section>
@@ -86,56 +127,62 @@ export default function Home() {
         {/* --- Services Section --- */}
         <section id="services" className="py-24 px-6 sm:px-12 lg:px-24 bg-white">
           <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
-              <div className="space-y-2">
-                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary">What I Offer</h3>
-                <h2 className="font-serif text-4xl lg:text-5xl text-gray-900 font-bold">Services & Expertise</h2>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-8">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/5 text-primary text-[10px] font-bold uppercase tracking-[0.2em] rounded-full">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+                  Our Expertise
+                </div>
+                <h2 className="font-serif text-4xl lg:text-6xl text-gray-900 font-bold">Services & Expertise</h2>
               </div>
-              <p className="text-gray-500 max-w-md">
-                Providing comprehensive support through evidence-based clinical practice and academic insight.
+              <p className="text-gray-500 max-w-md text-lg font-light leading-relaxed">
+                Providing comprehensive support through evidence-based clinical practice and professional academic insight.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {/* Service 1 */}
-              <div className="group p-10 bg-white border border-gray-100 rounded-3xl hover:border-primary/20 hover:shadow-xl transition-all duration-300">
-                <div className="w-14 h-14 bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                  <User className="w-7 h-7" />
+              <div className="group p-10 bg-white border border-gray-100 rounded-[2.5rem] hover:border-primary/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500 group-hover:rotate-6">
+                  <User className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">Individual Therapy</h3>
-                <p className="text-gray-600 leading-relaxed mb-8">
+                <p className="text-gray-600 leading-relaxed mb-8 font-light italic">
                   One-on-one sessions drawing on DBT, CBT, ACT, and Humanistic approaches to support anxiety and emotional regulation.
                 </p>
-                <Link href="#contact" className="inline-flex items-center text-primary font-bold group/link">
-                  Request Session <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                <Link href="#contact" className="inline-flex items-center gap-2 text-primary font-bold group/link">
+                  <span className="border-b-2 border-primary/20 group-hover/link:border-primary transition-all">Request Session</span>
+                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>
 
               {/* Service 2 */}
-              <div className="group p-10 bg-white border border-gray-100 rounded-3xl hover:border-primary/20 hover:shadow-xl transition-all duration-300 shadow-sm shadow-primary/5">
-                <div className="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center mb-8">
-                  <GraduationCap className="w-7 h-7" />
+              <div className="group p-10 bg-primary text-white rounded-[2.5rem] shadow-2xl shadow-primary/30 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8">
+                  <GraduationCap className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Adolescent Support</h3>
-                <p className="text-gray-600 leading-relaxed mb-8">
-                  Specialized support for young adults navigating identity, academic pressure, and relational challenges.
+                <h3 className="text-2xl font-bold mb-4">Adolescent Support</h3>
+                <p className="text-white/80 leading-relaxed mb-8 font-light italic">
+                  Specialized support for young adults navigating identity, academic pressure, and relational challenges during pivotal growth phases.
                 </p>
-                <Link href="#contact" className="inline-flex items-center text-primary font-bold group/link">
-                  Learn more <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                <Link href="#contact" className="inline-flex items-center gap-2 text-white font-bold group/link">
+                  <span className="border-b-2 border-white/20 group-hover/link:border-white transition-all">Learn more</span>
+                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>
 
               {/* Service 3 */}
-              <div className="group p-10 bg-white border border-gray-100 rounded-3xl hover:border-primary/20 hover:shadow-xl transition-all duration-300">
-                <div className="w-14 h-14 bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                  <BookOpen className="w-7 h-7" />
+              <div className="group p-10 bg-white border border-gray-100 rounded-[2.5rem] hover:border-primary/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-primary/5 text-primary rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500 group-hover:-rotate-6">
+                  <BookOpen className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">Psycho-Education</h3>
-                <p className="text-gray-600 leading-relaxed mb-8">
-                  Workshops and assessments focused on mental health awareness, personality, and clinical conceptualization.
+                <p className="text-gray-600 leading-relaxed mb-8 font-light italic">
+                  Workshops and assessments focused on mental health awareness, personality, and clinical conceptualization for students and faculty.
                 </p>
-                <Link href="#contact" className="inline-flex items-center text-primary font-bold group/link">
-                  Enquire <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                <Link href="#contact" className="inline-flex items-center gap-2 text-primary font-bold group/link">
+                  <span className="border-b-2 border-primary/20 group-hover/link:border-primary transition-all">Enquire Now</span>
+                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
@@ -143,67 +190,89 @@ export default function Home() {
         </section>
 
         {/* --- Experience & Research --- */}
-        <section id="research" className="py-24 px-6 sm:px-12 lg:px-24 bg-gray-50">
+        <section id="research" className="py-32 px-6 sm:px-12 lg:px-24 bg-gray-50/50">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-20">
 
               <div className="lg:col-span-2 space-y-12">
                 <div className="space-y-4">
-                  <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Academic Career</h3>
-                  <h2 className="font-serif text-4xl text-gray-900 font-bold leading-tight">Teaching & Clinical Roles</h2>
-                  <p className="text-gray-600">
-                    Grounded in psychological science and compassionate inquiry.
+                  <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary">Academic Track</p>
+                  <h2 className="font-serif text-4xl md:text-5xl text-gray-900 font-bold leading-tight">Teaching & Clinical Roles</h2>
+                  <p className="text-gray-500 text-lg font-light leading-relaxed">
+                    Bridging empirical research with clinical application in leading academic institutions.
                   </p>
                 </div>
 
-                <div className="space-y-8 relative before:absolute before:left-2 before:top-2 before:bottom-2 before:w-px before:bg-gray-200">
-                  <div className="relative pl-8">
-                    <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-white border-4 border-primary"></div>
-                    <h4 className="font-bold text-gray-900 text-lg">Visiting Faculty</h4>
-                    <p className="text-gray-500 text-sm">DHA Suffa University • 2025 - Present</p>
+                <div className="space-y-10 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-gradient-to-b before:from-primary before:to-transparent">
+                  <div className="relative pl-12 group">
+                    <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-white border-2 border-primary group-hover:bg-primary transition-all duration-300"></div>
+                    <p className="text-primary text-xs font-bold uppercase tracking-widest mb-1">2025 - Present</p>
+                    <h4 className="font-bold text-gray-900 text-xl">Visiting Faculty</h4>
+                    <p className="text-gray-500 text-sm italic font-light">DHA Suffa University • Psychology Department</p>
                   </div>
-                  <div className="relative pl-8">
-                    <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-white border-4 border-gray-300"></div>
-                    <h4 className="font-bold text-gray-900 text-lg">Visiting Faculty</h4>
-                    <p className="text-gray-500 text-sm">Ziauddin University • 2024 - Present</p>
+                  <div className="relative pl-12 group">
+                    <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-white border-2 border-gray-200 group-hover:border-primary transition-all duration-300"></div>
+                    <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-1">2024 - Present</p>
+                    <h4 className="font-bold text-gray-900 text-xl">Visiting Faculty</h4>
+                    <p className="text-gray-500 text-sm italic font-light">Ziauddin University • Clinical Psychology</p>
                   </div>
-                  <div className="relative pl-8">
-                    <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-white border-4 border-gray-300"></div>
-                    <h4 className="font-bold text-gray-900 text-lg">Associate Clinical Psychologist</h4>
-                    <p className="text-gray-500 text-sm">Integrated Psychology Clinic • 2024 - 2025</p>
+                  <div className="relative pl-12 group">
+                    <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-white border-2 border-gray-200 group-hover:border-primary transition-all duration-300"></div>
+                    <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-1">2024 - 2025</p>
+                    <h4 className="font-bold text-gray-900 text-xl">Associate Clinical Psychologist</h4>
+                    <p className="text-gray-500 text-sm italic font-light">Integrated Psychology Clinic</p>
                   </div>
                 </div>
               </div>
 
-              <div className="lg:col-span-3 space-y-8">
-                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">Selected Publications</h3>
+              <div className="lg:col-span-3 space-y-10">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400">Selected Publications</h3>
+                  <div className="h-px flex-grow mx-6 bg-gray-100"></div>
+                </div>
 
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {/* Pub 1 */}
-                  <div className="p-8 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-all group">
-                    <div className="flex justify-between items-start gap-4">
+                  <div className="p-8 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-xl transition-all group relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="flex justify-between items-start gap-6">
                       <div className="space-y-4">
+                        <div className="flex gap-2">
+                          <span className="px-2 py-0.5 bg-gray-50 text-[9px] font-bold text-gray-400 uppercase tracking-widest rounded border border-gray-100">Scopus Indexed</span>
+                        </div>
                         <h4 className="text-xl font-bold text-gray-900 leading-snug group-hover:text-primary transition-colors">
                           Understanding The Impact of Childhood Sexual Abuse and Child Maltreatment on Non-Suicidal Self-Harm
                         </h4>
-                        <p className="text-sm text-gray-500 italic">Kurdish Studies, 12(5), 1463–1473, 2024</p>
+                        <div className="flex items-center gap-3">
+                          <p className="text-sm text-gray-500 italic font-medium">Kurdish Studies, 12(5), 1463–1473</p>
+                          <span className="text-gray-300 text-[10px]">•</span>
+                          <span className="text-primary text-xs font-bold">2024</span>
+                        </div>
                       </div>
-                      <a href="https://doi.org/10.53555/ks.v12i5.3497" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-300 hover:text-primary transition-colors">
+                      <a href="https://doi.org/10.53555/ks.v12i5.3497" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 text-gray-300 hover:bg-primary hover:text-white rounded-xl transition-all duration-300">
                         <ExternalLink className="w-5 h-5" />
                       </a>
                     </div>
                   </div>
 
                   {/* Pub 2 */}
-                  <div className="p-8 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-all group">
-                    <div className="flex justify-between items-start gap-4">
+                  <div className="p-8 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-xl transition-all group relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="flex justify-between items-start gap-6">
                       <div className="space-y-4">
+                        <div className="flex gap-2">
+                          <span className="px-2 py-0.5 bg-gray-50 text-[9px] font-bold text-gray-400 uppercase tracking-widest rounded border border-gray-100">Peer Reviewed</span>
+                        </div>
                         <h4 className="text-xl font-bold text-gray-900 leading-snug group-hover:text-primary transition-colors">
                           A Comparative Study of the Meaning of Life and Academic Motivation
                         </h4>
-                        <p className="text-sm text-gray-500 italic">Migration Letters, 21(S14), 525–544, 2024</p>
+                        <div className="flex items-center gap-3">
+                          <p className="text-sm text-gray-500 italic font-medium">Migration Letters, 21(S14), 525–544</p>
+                          <span className="text-gray-300 text-[10px]">•</span>
+                          <span className="text-primary text-xs font-bold">2024</span>
+                        </div>
                       </div>
-                      <a href="https://doi.org/10.59670/ml.v21iS14.11300" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-300 hover:text-primary transition-colors">
+                      <a href="https://doi.org/10.59670/ml.v21iS14.11300" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-50 text-gray-300 hover:bg-primary hover:text-white rounded-xl transition-all duration-300">
                         <ExternalLink className="w-5 h-5" />
                       </a>
                     </div>
@@ -216,55 +285,78 @@ export default function Home() {
         </section>
 
         {/* --- Contact Section --- */}
-        <section id="contact" className="py-24 px-6 sm:px-12 lg:px-24 bg-white">
-          <div className="max-w-6xl mx-auto bg-primary rounded-[3rem] p-10 md:p-20 overflow-hidden relative shadow-2xl shadow-primary/30">
+        <section id="contact" className="py-32 px-6 sm:px-12 lg:px-24 bg-white">
+          <div className="max-w-6xl mx-auto bg-primary rounded-[4rem] p-10 md:p-24 overflow-hidden relative shadow-[0_40px_80px_-20px_rgba(19,92,88,0.4)]">
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/5 rounded-full blur-[150px] translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 relative z-10">
-              <div className="text-white space-y-10">
+              <div className="text-white space-y-12">
                 <div className="space-y-6">
-                  <h2 className="font-serif text-5xl md:text-6xl font-bold leading-tight">Let&apos;s talk.</h2>
-                  <p className="text-lg text-white/80 leading-relaxed max-w-sm">
+                  <div className="inline-block px-4 py-2 bg-white/10 rounded-full border border-white/5 text-xs font-bold uppercase tracking-[0.2em]">Contact Inquiry</div>
+                  <h2 className="font-serif text-6xl md:text-7xl font-bold leading-tight tracking-tight">Let&apos;s talk.</h2>
+                  <p className="text-xl text-white/70 font-light leading-relaxed max-w-sm">
                     Ready to start your journey of growth? Reach out for clinical services or academic collaboration.
                   </p>
                 </div>
 
-                <div className="space-y-6">
-                  <div className="flex items-center gap-5 group">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all">
-                      <Mail className="w-5 h-5" />
+                <div className="space-y-8 pt-6">
+                  <a href="mailto:hinau766@gmail.com" className="flex items-center gap-6 group w-fit">
+                    <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-500 group-hover:scale-110">
+                      <Mail className="w-6 h-6" />
                     </div>
-                    <p>hinau766@gmail.com</p>
-                  </div>
-                  <div className="flex items-center gap-5 group">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all">
-                      <Phone className="w-5 h-5" />
+                    <div>
+                      <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">Email</p>
+                      <p className="text-lg font-medium group-hover:translate-x-1 transition-transform">hinau766@gmail.com</p>
                     </div>
-                    <p>0335-7462807</p>
-                  </div>
-                  <div className="flex items-center gap-5 group">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all">
-                      <Linkedin className="w-5 h-5" />
+                  </a>
+                  <div className="flex items-center gap-6 group w-fit">
+                    <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all duration-500 group-hover:scale-110 shadow-lg shadow-white/5">
+                      <Phone className="w-6 h-6" />
                     </div>
-                    <p>linkedin.com/in/hina-usman/</p>
+                    <div>
+                      <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">WhatsApp</p>
+                      <p className="text-lg font-medium">0335-7462807</p>
+                    </div>
                   </div>
+                  <a href="https://linkedin.com/in/hina-usman/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 group w-fit">
+                    <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center group-hover:bg-[#0077b5] group-hover:text-white transition-all duration-500 group-hover:scale-110">
+                      <Linkedin className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-white/40 uppercase tracking-widest mb-1">LinkedIn</p>
+                      <p className="text-lg font-medium group-hover:translate-x-1 transition-transform">hina-usman</p>
+                    </div>
+                  </a>
                 </div>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-inner">
-                <form className="space-y-6">
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Name</label>
-                    <input type="text" className="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="E.g. Jane Doe" />
+              <div className="bg-white/5 backdrop-blur-3xl rounded-[3rem] p-8 md:p-14 border border-white/10 shadow-2xl">
+                <form className="space-y-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 ml-1">Full Name</label>
+                      <input type="text" className="w-full bg-white/10 border-none rounded-2xl p-5 text-white placeholder-white/20 focus:ring-2 focus:ring-white/20 outline-none transition-all" placeholder="Jane Doe" />
+                    </div>
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 ml-1">Email Address</label>
+                      <input type="email" className="w-full bg-white/10 border-none rounded-2xl p-5 text-white placeholder-white/20 focus:ring-2 focus:ring-white/20 outline-none transition-all" placeholder="jane@example.com" />
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Email</label>
-                    <input type="email" className="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="jane@example.com" />
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 ml-1">Subject</label>
+                    <select className="w-full bg-white/10 border-none rounded-2xl p-5 text-white/20 focus:ring-2 focus:ring-white/20 outline-none transition-all appearance-none cursor-pointer">
+                      <option className="bg-primary text-white">Clinical Inquiry</option>
+                      <option className="bg-primary text-white">Academic Collaboration</option>
+                      <option className="bg-primary text-white">Research Opportunity</option>
+                      <option className="bg-primary text-white">Other</option>
+                    </select>
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Message</label>
-                    <textarea rows={4} className="w-full bg-gray-50 border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none" placeholder="How can I help you?"></textarea>
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 ml-1">Your Message</label>
+                    <textarea rows={4} className="w-full bg-white/10 border-none rounded-2xl p-5 text-white placeholder-white/20 focus:ring-2 focus:ring-white/20 outline-none transition-all resize-none font-light" placeholder="Describe how I can support you..."></textarea>
                   </div>
-                  <button type="button" className="w-full py-5 bg-primary text-white font-bold rounded-xl hover:bg-secondary transition-all transform hover:-translate-y-1 active:scale-95 shadow-lg shadow-primary/20">
-                    Send Inquiry
+                  <button type="button" className="w-full py-6 bg-white text-primary font-bold rounded-2xl hover:bg-accent hover:text-white transition-all transform hover:-translate-y-1 active:scale-95 shadow-2xl shadow-black/20 text-lg uppercase tracking-widest">
+                    Send Message
                   </button>
                 </form>
               </div>
@@ -274,22 +366,32 @@ export default function Home() {
       </main>
 
       {/* --- Footer --- */}
-      <footer className="py-12 px-6 sm:px-12 lg:px-24 bg-white border-t border-gray-100">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <footer className="py-20 px-6 sm:px-12 lg:px-24 bg-white border-t border-gray-100 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 items-center">
           <div className="text-center md:text-left">
-            <p className="font-serif text-xl font-bold text-gray-900">Hina Usman</p>
-            <p className="text-sm text-gray-500 mt-1">Associate Psychologist • Lecturer</p>
+            <p className="font-serif text-2xl font-bold text-gray-900 mb-2">Hina Usman</p>
+            <p className="text-sm text-gray-400 font-medium uppercase tracking-[0.2em]">Empowering through psychology.</p>
           </div>
 
-          <div className="flex gap-8 text-sm font-medium text-gray-500">
-            <Link href="#about" className="hover:text-primary transition-colors">About</Link>
-            <Link href="#services" className="hover:text-primary transition-colors">Services</Link>
-            <Link href="#research" className="hover:text-primary transition-colors">Research</Link>
+          <div className="flex justify-center gap-12 text-sm font-bold uppercase tracking-widest text-gray-400">
+            <Link href="#about" className="hover:text-primary transition-colors hover:translate-y-[-2px]">About</Link>
+            <Link href="#services" className="hover:text-primary transition-colors hover:translate-y-[-2px]">Services</Link>
+            <Link href="#research" className="hover:text-primary transition-colors hover:translate-y-[-2px]">Research</Link>
           </div>
 
-          <p className="text-xs text-gray-400 uppercase tracking-widest font-medium">
-            © {new Date().getFullYear()} All Rights Reserved
-          </p>
+          <div className="text-center md:text-right space-y-4">
+            <p className="text-[10px] text-gray-400 uppercase tracking-[0.3em] font-bold">
+              © {new Date().getFullYear()} BRIDGING CLINICAL & ACADEMIC EXCELLENCE
+            </p>
+            <div className="flex justify-center md:justify-end gap-4">
+              <div className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 hover:border-primary hover:text-primary transition-all cursor-pointer">
+                <Linkedin className="w-4 h-4" />
+              </div>
+              <div className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 hover:border-primary hover:text-primary transition-all cursor-pointer">
+                <Mail className="w-4 h-4" />
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
