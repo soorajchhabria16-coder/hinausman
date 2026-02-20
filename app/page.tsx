@@ -36,13 +36,10 @@ export default function Home() {
                   <div className="absolute -top-10 -right-10 w-32 h-32 bg-secondary opacity-20 rounded-full blur-2xl"></div>
                   <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary opacity-20 rounded-full blur-2xl"></div>
                   <div className="w-full h-full blob-shape overflow-hidden shadow-2xl bg-gray-200 dark:bg-gray-700 relative z-10">
-                    <Image
+                    <img
                       src="/hina-portrait.jpg"
-                      alt="Hina Usman portrait"
-                      width={600}
-                      height={600}
-                      className="w-full h-full object-cover"
-                      priority
+                      alt="Hina Usman"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                 </div>
