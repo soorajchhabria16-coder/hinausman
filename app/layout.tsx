@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css'; // Global styles
 
 const inter = Inter({
@@ -22,6 +23,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="font-sans bg-[#fcfcfc] text-[#1a1a1a] antialiased selection:bg-[#135c58] selection:text-white" suppressHydrationWarning>
         {children}
+        <Analytics />
       </body>
     </html>
   );
