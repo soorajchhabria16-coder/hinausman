@@ -50,8 +50,8 @@ export default function Home() {
                     </span>
                     <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                   </Link>
-                  <Link href="#research" className="px-10 py-4 border border-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-50 hover:border-gray-200 transition-all">
-                    View Publications
+                  <Link href="/hina-usman-cv.pdf" target="_blank" className="px-10 py-4 border border-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-50 hover:border-gray-200 transition-all flex items-center justify-center gap-2">
+                    Download CV <ExternalLink className="w-4 h-4" />
                   </Link>
                 </div>
 
