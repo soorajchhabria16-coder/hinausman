@@ -1,7 +1,7 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'motion/react';
-
 
 export function HeroIllustration() {
   return (
@@ -27,10 +27,11 @@ export function HeroIllustration() {
         }}
       >
         <div className="absolute inset-0 bg-[#ffe4e6] opacity-20"></div>
-        <img
+        <Image
           src="/hina-portrait.jpg"
           alt="Hina Usman"
-          className="w-full h-full object-cover object-[center_20%]"
+          fill
+          className="object-cover object-[center_20%]"
         />
 
         {/* Subtle Overlay to match visual aesthetic */}

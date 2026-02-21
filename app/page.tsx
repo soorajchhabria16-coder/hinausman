@@ -466,12 +466,22 @@ export default function Home() {
               © {new Date().getFullYear()} BRIDGING CLINICAL & ACADEMIC EXCELLENCE
             </p>
             <div className="flex justify-center md:justify-end gap-4">
-              <div className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 hover:border-primary hover:text-primary transition-all cursor-pointer">
+              <a
+                href="https://linkedin.com/in/hina-usman/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 hover:border-primary hover:text-primary transition-all cursor-pointer"
+                aria-label="LinkedIn"
+              >
                 <Linkedin className="w-4 h-4" />
-              </div>
-              <div className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 hover:border-primary hover:text-primary transition-all cursor-pointer">
+              </a>
+              <a
+                href="mailto:hinau766@gmail.com"
+                className="w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 hover:border-primary hover:text-primary transition-all cursor-pointer"
+                aria-label="Email"
+              >
                 <Mail className="w-4 h-4" />
-              </div>
+              </a>
             </div>
           </div>
         </div>
